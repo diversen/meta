@@ -7,7 +7,8 @@ if (!session::isAdmin()){
 
 $master = config::getMainIni('master');
 if (!$master) {
-    moduleLoader::setStatus(403);
+    //moduleLoader::setStatus(403);
+    echo lang::translate('meta_always_visible');
     return;
 }
 

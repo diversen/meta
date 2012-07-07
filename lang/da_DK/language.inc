@@ -6,3 +6,5 @@ $_COS_LANG_MODULE['meta_meta_visible_for_robots'] = 'Siden indekseres af robotte
 $_COS_LANG_MODULE['meta_robots_legend'] = 'Synlighed overfor robotter';
 
 $_COS_LANG_MODULE['meta_meta_updated_action'] = 'Meta tags opdateret';
+
+$_COS_LANG_MODULE['meta_always_visible'] = 'Robot tag for satte domæne navne er altid synlig';
