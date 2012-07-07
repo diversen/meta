@@ -1,6 +1,6 @@
 <?php
 
-if (!session::checkAccessControl('meta_allow_edit')){
+if (!session::isAdmin()){
     moduleLoader::setStatus(403);
     return;
 }

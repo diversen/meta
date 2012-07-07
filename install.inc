@@ -13,7 +13,7 @@ $_INSTALL['MAIN_MENU_ITEM'] = array (
     'parent' => 0,
     'weight' => 3,
     'admin_only' => true,
-    'section' => 'meta'
+    'section' => 'settings'
 );
 
 $_INSTALL['VERSION'] = 1.41;
