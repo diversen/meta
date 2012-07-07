@@ -1,0 +1,61 @@
+<?php
+
+class meta {
+    
+    public $errors = array ();
+    public function form () {
+        
+        $res = config::getMainIni('meta_robots');
+        if ($res == 'noindex, nofollow') {
+            $set = 0;
+        } else {
+            $set = 1;
+        }
+        
+        $init = array ('meta_robots' => $set);
+        $f = new html();
+        $f->init($init, 'robots_submit');
+        $f->formStart();
+        
+        $rows = array (
+            
+            array (
+                'id' => 0,
+                'title' => lang::translate('meta_meta_in_visible_for_robots')
+            ),
+            
+            array (
+                'id' => 1,
+                'title' => lang::translate('meta_meta_visible_for_robots')
+            ),
+            
+        );
+        $f->legend(lang::translate('meta_robots_legend'));
+        $f->select('meta_robots', $rows, 'title', 'id');
+        $f->submit('robots_submit', lang::system('submit'));
+        $f->formEnd();
+        
+        echo $f->getStr();
+    }
+    
+    /**
+     * 
+     */
+    public function validate () {
+        
+    }
+    
+    public function update () {
+
+        if ($_POST['meta_robots'] == 1) {
+           //die;
+            configdb::set('meta_robots', '', 'main');
+
+        }
+        
+        if ($_POST['meta_robots'] == 0) {
+            
+            configdb::set('meta_robots', 'noindex, nofollow', 'main');
+        }
+    }
+}
